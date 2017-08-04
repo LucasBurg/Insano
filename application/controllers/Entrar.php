@@ -8,9 +8,14 @@ class Entrar extends CI_Controller
             $this->entrar_model->setUsu($this->input->post('usu'));
             $this->entrar_model->setSen($this->input->post('sen'));
             $result = $this->entrar_model->valido();
-            if (!empty($result)) {
+            
+            if ($result > 0) {
                 $this->load->library('session');
                 $this->session->set_userdata('usu', $result->usu);
+                $this->session->set_userdata('id', $result->id);
+                $this->session->set_userdata('nom', $result->nom);
+                
+                
                 redirect('/inicio');
             } 
         }
