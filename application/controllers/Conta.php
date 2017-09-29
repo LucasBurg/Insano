@@ -33,8 +33,9 @@ class Conta extends CI_Controller
         }
         
         $this->load->helper('form');
+        $this->load->view('templates/header');
         $this->load->view('conta/form_criar');
-        
+        $this->load->view('templates/footer');
         
     }
     
