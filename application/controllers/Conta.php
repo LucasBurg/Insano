@@ -1,11 +1,6 @@
 <?php
 class Conta extends CI_Controller
 {
-    public function sucesso()
-    {
-        $this->load->view('conta/sucesso');
-    }
-    
     public function criar()
     {
         if ($this->input->method() == 'post') {
@@ -33,11 +28,9 @@ class Conta extends CI_Controller
         }
         
         $this->load->helper('form');
-        $this->load->view('templates/header');
-        $this->load->view('conta/form_criar');
-        $this->load->view('templates/footer');
-        
+        $this->load->library('template');
+        $this->template->add_js(base_url('assets\jquery-validate\jquery.validate.min.js'));
+        $this->template->add_js(base_url('assets\js\conta_criar.js'));
+        $this->template->load_view('conta/criar');
     }
-    
-    
 }

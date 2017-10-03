@@ -1,6 +1,12 @@
 <div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h1>Crie uma conta e começe a usar nosso sistema</h1>
+        </div>
+    </div>
+</div>
+<div class="row">
     <div class="col-md-6 col-md-offset-3">
-        <h4>Crie um conta</h4>
         <?= form_open('/conta/criar', array('autocomplete' => 'off')) ?>
         <div class="form-group">
             <label class="control-label">Nome</label>
@@ -28,10 +34,15 @@
             <input class="form-control" type="password" name="sen" placeholder="Informe uma senha" value="<?= set_value('sen') ?>">
         </div>
         <div class="form-group">
-            <input type="submit" class="btn btn-default" value="Criar">
+            <label class="control-label">Confirmar a senha</label>
+            <?= form_error('conf_sen') ?>
+            <input class="form-control" type="password" name="sen" placeholder="Confirmar a senha" value="<?= set_value('conf_sen') ?>">
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Criar">
+            <?= anchor('/welcome', 'Voltar', array('class' => 'btn btn-default')) ?>
         </div>
         <?= form_close() ?>
     </div>
 </div>
-
 
