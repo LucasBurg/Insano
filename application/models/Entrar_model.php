@@ -1,7 +1,6 @@
 <?php
 class Entrar_model extends CI_Model
 {
-    
     private $usu;
     
     private $sen;
@@ -15,20 +14,20 @@ class Entrar_model extends CI_Model
     }
     
     
-    public function setUsu($value)
+    public function set_usu($usu)
     {
-        $this->usu = $value;
+        $this->usu = $usu;
     }
     
-    public function setSen($value)
+    public function set_sen($sen)
     {
-        $this->sen = $value;
+        $this->sen = $sen;
     }
 
     public function valido()
     {
-        $query = $this->db->get_where('pessoa', ['usu' => $this->usu, 'sen' => $this->sen]);
-        return $query->row();
+        $stmt = $this->db->get_where('pessoa', array('usu' => $this->usu, 'sen' => $this->sen));
+        return $stmt->row();
     }
     
     
