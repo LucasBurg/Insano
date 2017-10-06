@@ -13,6 +13,17 @@ $form_conta_criar.validate({
         ema: {
             required: true,
             email: true
+        },
+        usu: {
+            required: true
+        },
+        sen: {
+            required: true,
+            minlength: 4
+        },
+        conf_sen: {
+            required: true,
+            equalTo: '#sen'
         }
     } 
 });

@@ -18,6 +18,9 @@ jQuery.validator.setDefaults({
         } else {
             error.insertAfter(element);
         }
+    },
+    submitHandler: function(form) {
+        form.submit();
     }
 });
 

@@ -30,12 +30,12 @@
         </div>
         <div class="form-group">
             <label class="control-label">Senha</label>
-            <input class="form-control" type="password" name="sen" placeholder="Informe uma senha" value="<?= set_value('sen') ?>">
+            <input class="form-control" type="password" name="sen" id="sen" placeholder="Informe uma senha" value="<?= set_value('sen') ?>">
             <?= form_error('sen') ?>
         </div>
         <div class="form-group">
             <label class="control-label">Confirmar a senha</label>
-            <input class="form-control" type="password" name="sen" placeholder="Confirmar a senha" value="<?= set_value('conf_sen') ?>">
+            <input class="form-control" type="password" name="conf_sen" id="conf_sen" placeholder="Confirmar a senha" value="<?= set_value('conf_sen') ?>">
             <?= form_error('conf_sen') ?>
         </div>
         <div class="form-group">

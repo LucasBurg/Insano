@@ -1,3 +1,12 @@
+<?php if (isset($_SESSION['sucesso'])) : ?>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success" role="alert">
+                <?php echo $this->session->flashdata('sucesso'); ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
 <div class="row">
     <div class="col-md-12">
         <div class="page-header">
@@ -18,6 +27,7 @@
         </div>
         <div class="form-group">
             <input class="btn btn-primary" type="submit" name="submit" value="Entrar">
+            <?= anchor('conta/criar', 'Crair uma conta') ?>
         </div>
         <?=form_close()?>
     </div>
