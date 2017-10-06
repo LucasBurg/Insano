@@ -6,24 +6,17 @@ class Conta extends CI_Controller
         if ($this->input->method() == 'post') {
             
             $this->load->library('form_validation');
+            $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
             $this->form_validation->set_rules('nom', 'Nome', 'required');
-            $this->form_validation->set_rules('datnas', 'Data de nascimento', 'required');
+            $this->form_validation->set_rules('dat_nas', 'Data de nascimento', 'required');
             $this->form_validation->set_rules('ema', 'E-mail', 'required');
             $this->form_validation->set_rules('usu', 'Usuário', 'required');
             $this->form_validation->set_rules('sen', 'Senha', 'required');
             
-            if ($this->form_validation->run() == true) {
-                $this->load->model('pessoa_model');
-                $this->pessoa_model->setNom($this->input->post('nom'));
-                $this->pessoa_model->setDatnas($this->input->post('datnas'));
-                $this->pessoa_model->setEma($this->input->post('ema'));
-                $this->pessoa_model->setUsu($this->input->post('usu'));
-                $this->pessoa_model->setSen($this->input->post('sen'));
-                $result = $this->pessoa_model->criarPessoa();
-            
-                if ($result) {
-                    redirect('/conta/sucesso');
-                }
+            if ($this->form_validation->run()) {
+                
+                var_dump($this->input->post());
+                
             }
         }
         

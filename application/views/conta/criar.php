@@ -10,33 +10,33 @@
         <?= form_open('/conta/criar', array('autocomplete' => 'off')) ?>
         <div class="form-group">
             <label class="control-label">Nome</label>
-            <?= form_error('nom') ?>
             <input class="form-control" type="text" name="nom" placeholder="Informe seu nome" value="<?= set_value('nom') ?>">
+            <?= form_error('nom') ?>
         </div>
         <div class="form-group">
             <label class="control-label">Data de nascimento</label>
-            <?= form_error('datnas') ?>
-            <input class="form-control" type="text" name="datnas" placeholder="Informe sua data de nascimento" value="<?= set_value('datnas') ?>">
+            <input class="form-control" type="text" name="dat_nas" placeholder="Informe sua data de nascimento" value="<?= set_value('dat_nas') ?>">
+            <?= form_error('dat_nas') ?>
         </div>
         <div class="form-group">
             <label class="control-label">E-mail</label>
-            <?= form_error('ema') ?>
             <input class="form-control" type="text" name="ema" placeholder="Informe seu e-mail" value="<?= set_value('ema') ?>">
+            <?= form_error('ema') ?>
         </div>
         <div class="form-group">
             <label class="control-label">Usuário</label>
-            <?= form_error('usu') ?>
             <input class="form-control" type="text" name="usu" placeholder="Informe um usuário" value="<?= set_value('usu') ?>">
+            <?= form_error('usu') ?>
         </div>
         <div class="form-group">
             <label class="control-label">Senha</label>
-            <?= form_error('sen') ?>
             <input class="form-control" type="password" name="sen" placeholder="Informe uma senha" value="<?= set_value('sen') ?>">
+            <?= form_error('sen') ?>
         </div>
         <div class="form-group">
             <label class="control-label">Confirmar a senha</label>
-            <?= form_error('conf_sen') ?>
             <input class="form-control" type="password" name="sen" placeholder="Confirmar a senha" value="<?= set_value('conf_sen') ?>">
+            <?= form_error('conf_sen') ?>
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Criar">
