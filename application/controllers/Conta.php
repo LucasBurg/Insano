@@ -22,6 +22,8 @@ class Conta extends CI_Controller
         $this->load->helper('form');
         $this->load->library('template');
         $this->template->add_js(base_url('assets\jquery-validate\jquery.validate.min.js'));
+        $this->template->add_js(base_url('assets\jquery-validate\jquery.validate-default.js'));
+        
         $this->template->add_js(base_url('assets\js\conta_criar.js'));
         $this->template->load_view('conta/criar');
     }

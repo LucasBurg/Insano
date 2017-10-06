@@ -7,7 +7,7 @@
 </div>
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
-        <?= form_open('/conta/criar', array('autocomplete' => 'off')) ?>
+        <?= form_open('/conta/criar', array('id' => 'form_conta_criar', 'autocomplete' => 'off')) ?>
         <div class="form-group">
             <label class="control-label">Nome</label>
             <input class="form-control" type="text" name="nom" placeholder="Informe seu nome" value="<?= set_value('nom') ?>">
