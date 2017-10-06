@@ -14,13 +14,15 @@ class Conta extends CI_Controller
             
             if ($this->form_validation->run()) {
                 $this->load->model('inquilino/inquilino_model', 'inquilino');
+                $this->load->helper('formata_datahora');
+                $fdate = formata_data($this->input->post('dat_nas'));
                 $this->inquilino->set_nom($this->input->post('nom'));
-                $this->inquilino->set_dat_nas($this->input->post('dat_nas'));
+                $this->inquilino->set_dat_nas($fdate);
                 $this->inquilino->set_ema($this->input->post('ema'));
+                $this->inquilino->set_usu($this->input->post('usu'));
                 $this->inquilino->set_sen($this->input->post('sen'));
                 $this->inquilino->set_usu_cre('root');
                 $this->inquilino->set_dat_cre(date('Y-m-d H:i:s'));
-                
                 $this->load->model('inquilino/inquilino_tabela_model', 'inquilino_tabela');
                 if ($this->inquilino_tabela->criar($this->inquilino)) {
                     $this->session->set_flashdata('sucesso', 'Você criou uma conta com sucesso!');

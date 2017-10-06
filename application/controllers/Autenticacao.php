@@ -14,14 +14,17 @@ class Autenticacao extends CI_Controller
     public function entrar() 
     {
         if ($this->input->method() === 'post') {
-            $this->load->model('entrar_model', 'ent');
+            $this->load->model('inquilino/inquilino_entrar_model', 'ent');
             $this->ent->set_usu($this->input->post('usu'));
             $this->ent->set_sen($this->input->post('sen'));
+            if ($this->ent->valido()) {
+                $this->ent->registra_sessao();
+                redirect('/inicio');
+            }
         }
         
         $this->load->library('template');
         $this->load->helper('form');
-        
         $this->template->load_view('autenticacao/entrar');
     }
     
