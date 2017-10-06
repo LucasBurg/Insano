@@ -6,7 +6,6 @@ class Conta extends CI_Controller
         if ($this->input->method() == 'post') {
             
             $this->load->library('form_validation');
-            $this->form_validation->set_error_delimiters('<p class="text-danger">', '</p>');
             $this->form_validation->set_rules('nom', 'Nome', 'required');
             $this->form_validation->set_rules('dat_nas', 'Data de nascimento', 'required');
             $this->form_validation->set_rules('ema', 'E-mail', 'required');
