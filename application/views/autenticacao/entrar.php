@@ -16,6 +16,7 @@
 </div>
 <div class="row">
     <div class="col-md-4 col-md-offset-4">
+        <?= validation_errors() ?>
         <?=form_open('/autenticacao/entrar', array('autocomplete' => 'off'))?>
         <div class="form-group">
             <label class="control-label">Usuário</label>
@@ -32,4 +33,3 @@
         <?=form_close()?>
     </div>
 </div>
-
